@@ -8,13 +8,11 @@ def slackNotificationChannel = '#jenkins-notifications'  // ex: = "builds"
 
 // Function to notifiy on slack channel.
 def notifySlack(text, channel, status) {
-    def slackURL = 'https://hooks.slack.com/services/T....../B........./m.........................'
-    def jenkinsIcon = 'https://wiki.jenkins-ci.org/download/attachments/2916393/logo.png'
+   
 
     def payload = JsonOutput.toJson([
-        channel: channel,
-        username: "jenkins",
-        icon_url: jenkinsIcon,
+        channel: rivet-jenkins,
+        username: "",
         attachments: [[
                          "title" : "${env.JOB_NAME}, build #${env.BUILD_NUMBER}",
                          "title_link": "${env.BUILD_URL}",
